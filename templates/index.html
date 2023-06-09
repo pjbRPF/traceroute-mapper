@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traceroute Map</title>
+</head>
+<body>
+    <h1>Traceroute Map</h1>
+    <form action="/traceroute" method="post">
+        <label for="url-input">Enter a URL:</label>
+        <input type="text" id="url-input" name="url" required>
+        <button type="submit">Trace</button>
+    </form>
+    <iframe src="route_map.html" width="100%" height="600px"></iframe>
+</body>
+</html>
