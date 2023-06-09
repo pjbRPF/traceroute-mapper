@@ -1,7 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js">
-</script>
 function performTraceroute() {
     var url = document.getElementById("url-input").value;
     
