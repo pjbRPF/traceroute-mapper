@@ -40,6 +40,6 @@ def plot_traceroute(traceroute_results):
     print("Traceroute map generated. Please download 'traceroute_map.html' and open it in a web browser to view the map.")
 
 # Example usage
-destination = "www.example.com"
+destination = input("Enter a URL to trace: ")
 traceroute_results = run_traceroute(destination)
 plot_traceroute(traceroute_results)
