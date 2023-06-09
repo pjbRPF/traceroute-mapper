@@ -1,16 +1,26 @@
+from flask import Flask, request
+from flask_cors import CORS
 import folium
 from geopy.geocoders import Nominatim
 from scapy.all import *
 
+app = Flask(__name__)
+CORS(app)
+
+@app.route("/traceroute", methods=["POST"])
+def run_traceroute():
+    url = request.form.get("url")
+    dest_latitude, dest_longitude, hop_list = traceroute(url)
+    map_route = plot_route(dest_latitude, dest_longitude, hop_list)
+    map_route.save("route_map.html")
+    with open("route_map.html", "r") as f:
+        return f.read()
+
 def traceroute(url):
     # Remaining code stays the same
 
-# Prompt the user for a URL
-url = input("Enter a URL to trace: ")
+def plot_route(dest_latitude, dest_longitude, hop_list):
+    # Remaining code stays the same
 
-# Perform traceroute
-dest_latitude, dest_longitude, hop_list = traceroute(url)
-
-# Plot the route on a map
-map_route = plot_route(dest_latitude, dest_longitude, hop_list)
-map_route.save("route_map.html")
+if __name__ == "__main__":
+    app.run()
