@@ -25,6 +25,7 @@ def run_traceroute(destination):
             if reply[0]:
                 src_ip = reply[0][0][1].src
                 traceroute_results.append({"hop": ttl, "ip": src_ip})
+        print(traceroute_results) ## DEBUG
     except socket.gaierror:
         print(f"Unable to resolve the destination: {destination}")
     return traceroute_results
